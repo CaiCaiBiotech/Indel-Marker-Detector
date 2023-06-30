@@ -1,0 +1,32 @@
+# Indel Marker Detector
+This Python script detects unique indel markers from multiple VCF files for two different strains. It uses the `pysam` library to read VCF files and the genome file, and the `argparse` library to handle command-line arguments.
+
+## Requirements
+- Python 3
+- pysam library
+
+## Usage
+Run the script with the following command:
+
+python indel_marker_detector.py --strain1 indel_file1.vcf.gz indel_file2.vcf.gz --strain2 indel_file3.vcf.gz indel_file4.vcf.gz --genome genome.fa
+
+## Command-Line Arguments
+- `--strain1`: Specify one or more VCF files for strain 1.
+- `--strain2`: Specify one or more VCF files for strain 2.
+- `--genome`: Specify the genome file.
+
+## Output
+The script outputs two CSV files, `strain1_markers.csv` and `strain2_markers.csv`, which contain the detected indel markers for strain 1 and strain 2, respectively. Each row in the CSV files represents a marker and includes the following columns: Chromosome, Marker Start, Marker End, Indel Position, Marker Sequence, Indel Sequence.
+
+## Here is a brief description of the script and its command-line arguments:
+usage: indel_marker_detector.py --strain1 VCF_FILES [VCF_FILES ...] --strain2 VCF_FILES [VCF_FILES ...] --genome GENOME_FILE
+
+This script detects unique indel markers from multiple VCF files for two different strains.
+
+optional arguments:
+  --strain1 VCF_FILES [VCF_FILES ...]
+                        Specify one or more VCF files for strain 1.
+  --strain2 VCF_FILES [VCF_FILES ...]
+                        Specify one or more VCF files for strain 2.
+  --genome GENOME_FILE
+                        Specify the genome file.
